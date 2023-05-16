@@ -1,3 +1,3 @@
 <script>
-    console.log('MPHKA');
+    console.log('MPHKA kai egw');
     </script>
