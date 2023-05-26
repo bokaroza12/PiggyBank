@@ -39,7 +39,7 @@ session_start();
  										
 
 					
-						header("location: ../user/main.php");
+						header("location: ../user/main.html");
 						die;
 
 					}
