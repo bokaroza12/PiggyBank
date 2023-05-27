@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiggyBank</title> 
-    <link rel="stylesheet" href="../user_Front.css">
+    <link rel="stylesheet" href="../../css/user.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
    </head>
 <body>
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="..\user\main.html" class="button" target="_self">PiggyBank</a>
+        <a href="..\main.html" class="button" target="_self">PiggyBank</a>
       </div>
       <ul>
         <li><a href="..\Accounts\Account_main.html" class="button" target="_self">Accounts</a></li>
@@ -24,15 +24,24 @@
       </ul>
     </div>
   </nav>
-  <div class="img"></div>
-  <div class="center">
-   <ul>
-  <li><font size="+10">Coffee</font></li>
-  <li><font size="+10">Milk</font></li>
-  <li><font size="+10">Tea</font></li>
-</ul>
-    <div class="btns">
-    </div>
+    <div class="img"></div>
+  <div class="center" id="expense_cat">
+    <!-- <ul>
+      <li><font size="+10">Coffee</font></li>
+      <li><font size="+10">Milk</font></li>
+      <li><font size="+10">Tea</font></li>
+    </ul> -->
+    <h3 style="color:rgb(34, 34, 102)">Expected Expenses : <input type="number"></h3>
+    <h1 style="color:rgb(34, 34, 102)">Expense Categories</h1>
+    </br>
+    <button id="button">Food</button>
+    <button id="button">Entertainment</button>
+    <button id="button">Housing</button>
+    <button id="button">Shopping</button>
+    <button id="button">Healthcare</button>
+    <button id="button">Education</button>
+    <button id="button">Transportation</button>
+    <button id="button">Travel</button>
   </div>
-</body>
+ </body>
 </html>
