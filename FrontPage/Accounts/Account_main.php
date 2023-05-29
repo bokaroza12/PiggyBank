@@ -1,3 +1,7 @@
+<?php
+echo 'The current logged in user ID is: '.get_current_user_id();?>
+
+
 
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
@@ -16,7 +20,7 @@
         <a href="../main.html" class="button" target="_self">PiggyBank</a>
       </div>
       <ul>
-        <li><a href="..\Accounts\Account_main.html" class="button" target="_self">Accounts</a></li>
+        <li><a href="..\Accounts\Account_main.php" class="button" target="_self">Accounts</a></li>
         <li><a href="..\Budgets\Budget_main.html" class="button" target="_self">Budget</a></li>
         <li><a href="..\Transactions\Transactions_main.html" class="button" target="_self">Transactions</a></li>
         <li><a href="..\Goals\Goals_main.html" class="button" target="_self">Goals</a></li>
@@ -27,9 +31,31 @@
   <div class="img"></div>
   <div class="center">
    <ul>
-  <li><font size="+10">Coffee</font></li>
-  <li><font size="+10">Milk</font></li>
-  <li><font size="+10">Tea</font></li>
+  <li>  <font size="+7">
+    
+    <?php
+    
+      require_once "../../includes/connection.php"; 
+      require_once "../../includes/login.inc.php"; 
+      echo $_SESSION['id'];
+      $sql = "SELECT * FROM account inner join user on account.user_id = user.user_id where user.username = '{$_SESSION['id']}'";
+      $result = $con->query($sql);
+
+      if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+         echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "<br>";
+          }
+            } else {
+         echo "-----";} 
+
+      ?>
+
+
+          </font></li>
+
+  <li><font size="+7">Milk</font></li>
+  <li><font size="+7">Tea</font></li>
 </ul>
     <div class="btns">
     </div>
