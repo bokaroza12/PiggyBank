@@ -79,7 +79,7 @@ VALUES
 (12, 3, 'Travel Budget', 1500.00, '2023-06-01', '2023-06-30'),
 (13, 3, 'Savings Plan', 700.00, '2023-05-01', '2023-12-31'),
 (14, 3, 'Entertainment Budget', 400.00, '2023-05-01', '2023-05-31'),
-(15, 3, 'Emergency Fund', 2500.00, '2023-01-01', '2023-12-31');
+(15, 3, 'Emergency Fund', 2500.00, '2023-01-01', '2023-12-31'),
 -- User 4
 (16, 4, 'Monthly Expenses', 1600.00, '2023-05-01', '2023-05-31'),
 (17, 4, 'Travel Budget', 1200.00, '2023-06-01', '2023-06-30'),
@@ -333,82 +333,89 @@ VALUES
 (27, 5, 'Mutual Funds', 1900.00, '2023-05-29 10:00:00'),
 (28, 5, 'Real Estate', 8800.00, '2023-06-02 14:15:00');
 
+-- Predefined goals for User 1
 INSERT INTO `predefinedgoal` (`predefined_goal_id`, `goal_name`, `goal_type_id`, `created_at`)
 VALUES
--- User 1
-(1, 'Travel around the world', 1, '2023-05-01 09:00:00'),
-(2, 'Buy a luxury car', 2, '2023-05-01 09:00:00'),
-(3, 'Save for retirement', 3, '2023-05-01 09:00:00'),
-(4, 'Start a business', 4, '2023-05-01 09:00:00'),
-(5, 'Pay off debt', 5, '2023-05-01 09:00:00'),
+(1, 'Travel', 1, CURRENT_TIMESTAMP),
+(2, 'Education', 2, CURRENT_TIMESTAMP),
+(3, 'Home Purchase', 3, CURRENT_TIMESTAMP),
+(4, 'Retirement', 4, CURRENT_TIMESTAMP),
+(5, 'Emergency Fund', 5, CURRENT_TIMESTAMP);
 
--- User 2
-(6, 'Buy a house', 1, '2023-05-01 09:00:00'),
-(7, 'Save for education', 3, '2023-05-01 09:00:00'),
-(8, 'Achieve financial independence', 3, '2023-05-01 09:00:00'),
-(9, 'Travel to exotic destinations', 1, '2023-05-01 09:00:00'),
-(10, 'Start an investment portfolio', 4, '2023-05-01 09:00:00'),
+-- Predefined goals for User 2
+INSERT INTO `predefinedgoal` (`predefined_goal_id`, `goal_name`, `goal_type_id`, `created_at`)
+VALUES
+(6, 'Travel', 1, CURRENT_TIMESTAMP),
+(7, 'Education', 2, CURRENT_TIMESTAMP),
+(8, 'Home Purchase', 3, CURRENT_TIMESTAMP),
+(9, 'Retirement', 4, CURRENT_TIMESTAMP),
+(10, 'Emergency Fund', 5, CURRENT_TIMESTAMP);
 
--- User 3
-(11, 'Pay off student loans', 5, '2023-05-01 09:00:00'),
-(12, 'Save for a dream wedding', 3, '2023-05-01 09:00:00'),
-(13, 'Start a charitable foundation', 4, '2023-05-01 09:00:00'),
-(14, 'Achieve a fitness goal', 6, '2023-05-01 09:00:00'),
-(15, 'Learn a new language', 7, '2023-05-01 09:00:00'),
+-- Predefined goals for User 3
+INSERT INTO `predefinedgoal` (`predefined_goal_id`, `goal_name`, `goal_type_id`, `created_at`)
+VALUES
+(11, 'Travel', 1, CURRENT_TIMESTAMP),
+(12, 'Education', 2, CURRENT_TIMESTAMP),
+(13, 'Home Purchase', 3, CURRENT_TIMESTAMP),
+(14, 'Retirement', 4, CURRENT_TIMESTAMP),
+(15, 'Emergency Fund', 5, CURRENT_TIMESTAMP);
 
--- User 4
-(16, 'Buy a vacation home', 1, '2023-05-01 09:00:00'),
-(17, 'Save for children''s education', 3, '2023-05-01 09:00:00'),
-(18, 'Start a philanthropic project', 4, '2023-05-01 09:00:00'),
-(19, 'Achieve a personal milestone', 6, '2023-05-01 09:00:00'),
-(20, 'Write a book', 7, '2023-05-01 09:00:00'),
+-- Predefined goals for User 4
+INSERT INTO `predefinedgoal` (`predefined_goal_id`, `goal_name`, `goal_type_id`, `created_at`)
+VALUES
+(16, 'Travel', 1, CURRENT_TIMESTAMP),
+(17, 'Education', 2, CURRENT_TIMESTAMP),
+(18, 'Home Purchase', 3, CURRENT_TIMESTAMP),
+(19, 'Retirement', 4, CURRENT_TIMESTAMP),
+(20, 'Emergency Fund', 5, CURRENT_TIMESTAMP);
 
--- User 5
-(21, 'Start a successful business', 4, '2023-05-01 09:00:00'),
-(22, 'Save for a dream vacation', 1, '2023-05-01 09:00:00'),
-(23, 'Retire early', 3, '2023-05-01 09:00:00'),
-(24, 'Achieve a fitness goal', 6, '2023-05-01 09:00:00'),
-(25, 'Learn a musical instrument', 7, '2023-05-01 09:00:00');
+-- Predefined goals for User 5
+INSERT INTO `predefinedgoal` (`predefined_goal_id`, `goal_name`, `goal_type_id`, `created_at`)
+VALUES
+(21, 'Travel', 1, CURRENT_TIMESTAMP),
+(22, 'Education', 2, CURRENT_TIMESTAMP),
+(23, 'Home Purchase', 3, CURRENT_TIMESTAMP),
+(24, 'Retirement', 4, CURRENT_TIMESTAMP),
+(25, 'Emergency Fund', 5, CURRENT_TIMESTAMP);
 
-
-INSERT INTO `savings` (`savings_id`, `user_id`, `savings_amount`, `start_date`, `end_date`)
+INSERT INTO `savings` (`savings_id`, `user_id`, `savings_name`, `savings_amount`, `savings_date`)
 VALUES
 -- User 1
-(1, 1, 5000.00, '2023-05-01', '2023-12-31'),
-(2, 1, 10000.00, '2023-05-01', '2023-12-31'),
-(3, 1, 20000.00, '2023-05-01', '2023-12-31'),
-(4, 1, 15000.00, '2023-05-01', '2023-12-31'),
-(5, 1, 30000.00, '2023-05-01', '2023-12-31'),
+(1, 1, 'Emergency Fund', 1000.00, '2023-05-01'),
+(2, 1, 'Vacation Savings', 1500.00, '2023-05-02'),
+(3, 1, 'Retirement Fund', 2000.00, '2023-05-03'),
+(4, 1, 'Education Fund', 2500.00, '2023-05-04'),
+(5, 1, 'Home Renovation Savings', 3000.00, '2023-05-05'),
 
 -- User 2
-(6, 2, 8000.00, '2023-05-01', '2023-12-31'),
-(7, 2, 12000.00, '2023-05-01', '2023-12-31'),
-(8, 2, 18000.00, '2023-05-01', '2023-12-31'),
-(9, 2, 10000.00, '2023-05-01', '2023-12-31'),
-(10, 2, 25000.00, '2023-05-01', '2023-12-31'),
+(6, 2, 'Travel Fund', 1200.00, '2023-05-01'),
+(7, 2, 'Car Purchase Savings', 1800.00, '2023-05-02'),
+(8, 2, 'Wedding Fund', 2200.00, '2023-05-03'),
+(9, 2, 'Investment Savings', 2800.00, '2023-05-04'),
+(10, 2, 'Emergency Fund', 3400.00, '2023-05-05'),
 
 -- User 3
-(11, 3, 6000.00, '2023-05-01', '2023-12-31'),
-(12, 3, 15000.00, '2023-05-01', '2023-12-31'),
-(13, 3, 25000.00, '2023-05-01', '2023-12-31'),
-(14, 3, 12000.00, '2023-05-01', '2023-12-31'),
-(15, 3, 35000.00, '2023-05-01', '2023-12-31'),
+(11, 3, 'Home Down Payment', 800.00, '2023-05-01'),
+(12, 3, 'Vacation Savings', 1200.00, '2023-05-02'),
+(13, 3, 'Car Repair Fund', 1600.00, '2023-05-03'),
+(14, 3, 'Education Savings', 2000.00, '2023-05-04'),
+(15, 3, 'Emergency Fund', 2400.00, '2023-05-05'),
 
 -- User 4
-(16, 4, 10000.00, '2023-05-01', '2023-12-31'),
-(17, 4, 20000.00, '2023-05-01', '2023-12-31'),
-(18, 4, 30000.00, '2023-05-01', '2023-12-31'),
-(19, 4, 15000.00, '2023-05-01', '2023-12-31'),
-(20, 4, 40000.00, '2023-05-01', '2023-12-31'),
+(16, 4, 'Retirement Fund', 1400.00, '2023-05-01'),
+(17, 4, 'Home Renovation Savings', 1800.00, '2023-05-02'),
+(18, 4, 'Travel Fund', 2200.00, '2023-05-03'),
+(19, 4, 'Emergency Fund', 2600.00, '2023-05-04'),
+(20, 4, 'Car Purchase Savings', 3000.00, '2023-05-05'),
 
 -- User 5
-(21, 5, 12000.00, '2023-05-01', '2023-12-31'),
-(22, 5, 18000.00, '2023-05-01', '2023-12-31'),
-(23, 5, 28000.00, '2023-05-01', '2023-12-31'),
-(24, 5, 9000.00, '2023-05-01', '2023-12-31'),
-(25, 5, 45000.00, '2023-05-01', '2023-12-31');
+(21, 5, 'Wedding Fund', 1000.00, '2023-05-01'),
+(22, 5, 'Education Fund', 1400.00, '2023-05-02'),
+(23, 5, 'Emergency Fund', 1800.00, '2023-05-03'),
+(24, 5, 'Vacation Savings', 2200.00, '2023-05-04'),
+(25, 5, 'Investment Savings', 2600.00, '2023-05-05');
 
-INSERT INTO `transactions` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
+INSERT INTO `transaction` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
 VALUES
 (1, 1, 1, '2023-05-01', 50.00),
 (2, 1, 2, '2023-05-02', 25.00),
@@ -431,7 +438,7 @@ VALUES
 (19, 1, 9, '2023-05-19', 45.00),
 (20, 1, 10, '2023-05-20', 70.00);
 
-INSERT INTO `transactions` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
+INSERT INTO `transaction` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
 VALUES
 (21, 2, 1, '2023-05-01', 50.00),
 (22, 2, 2, '2023-05-02', 25.00),
@@ -454,7 +461,7 @@ VALUES
 (39, 2, 9, '2023-05-19', 45.00),
 (40, 2, 10, '2023-05-20', 70.00);
 
-INSERT INTO `transactions` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
+INSERT INTO `transaction` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
 VALUES
 (41, 3, 1, '2023-05-01', 100.00),
 (42, 3, 2, '2023-05-02', 50.00),
@@ -477,7 +484,7 @@ VALUES
 (59, 3, 9, '2023-05-19', 90.00),
 (60, 3, 10, '2023-05-20', 140.00);
 
-INSERT INTO `transactions` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
+INSERT INTO `transaction` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
 VALUES
 (61, 4, 1, '2023-05-01', 200.00),
 (62, 4, 2, '2023-05-02', 150.00),
@@ -500,7 +507,7 @@ VALUES
 (79, 4, 9, '2023-05-19', 130.00),
 (80, 4, 10, '2023-05-20', 90.00);
 
-INSERT INTO `transactions` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
+INSERT INTO `transaction` (`transaction_id`, `user_id`, `category_id`, `transaction_date`, `amount`)
 VALUES
 (81, 5, 1, '2023-05-01', 150.00),
 (82, 5, 2, '2023-05-02', 120.00),
@@ -524,7 +531,7 @@ VALUES
 (100, 5, 10, '2023-05-20', 80.00);
 
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `created_at`)
+INSERT INTO `user` (`user_id`, `username`, `password`, `email`, `created_at`)
 VALUES
 (1, 'user1', 'password1', 'user1@example.com', '2023-05-01 10:00:00'),
 (2, 'user2', 'password2', 'user2@example.com', '2023-05-02 11:00:00'),
