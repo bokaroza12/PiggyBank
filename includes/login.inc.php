@@ -19,10 +19,10 @@ session_start();
 		{
 			//read to server
 			$query ="SELECT * from user where username = '$username' limit 1" ;
-			$query2 ="SELECT * from admin where username = '$username' limit 1" ;
+			//$query2 ="SELECT * from admin where username = '$username' limit 1" ;
 			
 			$result=mysqli_query($con,$query);
-			$result2=mysqli_query($con,$query2);
+			//$result2=mysqli_query($con,$query2);
 
 			if($result)
 			{
@@ -39,13 +39,13 @@ session_start();
  										
 
 					
-						header("location: ../user/main.html");
+						header("location: ../FrontPage/user/main.html");
 						die;
 
 					}
 				}
 			}
-			if($result2)
+		/*	if($result2)
 			{
 				if($result2 && mysqli_num_rows($result2) > 0)
 				{
@@ -57,7 +57,7 @@ session_start();
 						die;
 					}
 				}
-			}
+			}*/
 		header("location: ../index.php?error=wronglogin");
 		exit();
 			
