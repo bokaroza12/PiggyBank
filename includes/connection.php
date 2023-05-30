@@ -1,11 +1,17 @@
 <?php
 
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="piggy_db";
 
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
-	die("Failed to connect to Server!");
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'piggy_db');
+ 
+/* Attempt to connect to MySQL database */
+$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+
+// Check connection
+if($con === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+?>
