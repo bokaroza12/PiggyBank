@@ -26,20 +26,29 @@
   </nav>
   <div class="img"></div>
   <div class="center">
+    <div class="account">
    <ul>
   <li>  <font size="+3">
  <?php
   require_once("../../includes/login.inc.php");
+  require_once("Functions_Account.php");
 
 
+  $userID = 0;
+  $userID = getAccountByUserID($userID);
 
-  $sql = "SELECT * FROM account inner join user on account.user_id = user.user_id where user.user_id = '{$_SESSION['id']}'";
-    $result = $con->query($sql);
+  $accountID = 0;
+  $accountID = getAccountByID($accountID);
 
-    if ($result->num_rows > 0) {
+    $sql = "SELECT * FROM account inner join user on account.user_id = user.user_id where user.user_id = '{$userID}'";
+    $results = $con->query($sql);
+
+
+    if ($results->num_rows > 0) {
       // output data of each row
-      while($row = $result->fetch_assoc()) {
-      echo "Name: " . $row["account_name"]. "   ";
+      while($row = $results->fetch_assoc()) {
+        $accountID =  $row["account_id"];
+      echo getAccountByID($accountID);
       echo '<button onclick="alert(\'Account Name: ' . $row["account_name"]. ' - Balance: ' . $row["balance"]. ' - Created Date : ' .$row["created_at"]. '\')">More Info</button><br>';
     }  
          } else {
@@ -50,6 +59,7 @@
          </font></li>    
 </ul>
     <div class="btns">
+      </div>
     </div>
   </div>
 </body>
