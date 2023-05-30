@@ -27,8 +27,7 @@
   <div class="img"></div>
   <div class="center">
    <ul>
-  <li>  <font size="+7">
-
+  <li>  <font size="+3">
  <?php
   require_once("../../includes/login.inc.php");
 
@@ -40,18 +39,18 @@
     if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-      echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "<br>";
-       }
+      echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "    ";
+      echo '<button onclick="alert(\'Button clicked!\')">Click Me</button><br>';
+    }  
          } else {
           echo "ID:" .$_SESSION['id']. "<br>";
          }
 
 ?>
+         </font></li>    
 
-          </font></li>
-
-  <li><font size="+7">Milk</font></li>
-  <li><font size="+7">Tea</font></li>
+  <li><font size="+3">Milk</font></li>
+  <li><font size="+3">Tea</font></li>
 </ul>
     <div class="btns">
     </div>
