@@ -10,6 +10,7 @@ session_start();
 		$username=$_POST['uid'];
 		$password=$_POST['pwd'];
 
+		
 		if (emptyInputLogin($username, $password) !== false) {
 		header("location: ../index.php?error=emptyinput");
 		exit();
@@ -32,9 +33,11 @@ session_start();
 					$user_data=mysqli_fetch_assoc($result);
 					if($user_data['password']== $password)
 					{
-						$_SESSION['id'] = $user_data['id'];
+						$_SESSION['id'] = $user_data['user_id'];
 
-						$tmp_id=$user_data['id'];
+
+
+						$tmp_id=$user_data['user_id'];
 						mysqli_query($con,$query);
  										
 
@@ -70,4 +73,5 @@ session_start();
 		}
 	
 	}
+
 ?>

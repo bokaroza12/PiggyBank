@@ -1,26 +1,3 @@
-    
-    <?php
-
-session_start();
-include('../../includes/connection.php');
-include('../../includes/functions.php');
-
-$user_data=check_login($con);
-
-
-$sql = "SELECT * FROM account inner join user on account.user_id = user.user_id where user.username = '{$_SESSION['id']}'";
-$result = $con->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-   echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "<br>";
-    }
-      } else {
-   echo "This is : " . $_SESSION['id'];} 
-
-?>
-
 
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
@@ -52,6 +29,24 @@ if ($result->num_rows > 0) {
    <ul>
   <li>  <font size="+7">
 
+ <?php
+  require_once("../../includes/login.inc.php");
+
+
+
+  $sql = "SELECT * FROM account inner join user on account.user_id = user.user_id where user.user_id = '{$_SESSION['id']}'";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+      echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "<br>";
+       }
+         } else {
+          echo "ID:" .$_SESSION['id']. "<br>";
+         }
+
+?>
 
           </font></li>
 
