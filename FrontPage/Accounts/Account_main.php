@@ -39,8 +39,8 @@
     if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-      echo "ID: " . $row["user_id"]. " - Account Name: " . $row["account_name"]. " - Balance: " . $row["balance"]. "    ";
-      echo '<button onclick="alert(\'Button clicked!\')">Click Me</button><br>';
+      echo "Name: " . $row["account_name"]. "   ";
+      echo '<button onclick="alert(\'Account Name: ' . $row["account_name"]. ' - Balance: ' . $row["balance"]. ' - Created Date : ' .$row["created_at"]. '\')">More Info</button><br>';
     }  
          } else {
           echo "ID:" .$_SESSION['id']. "<br>";
