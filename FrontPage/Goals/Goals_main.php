@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -17,10 +17,10 @@
       </div>
       <ul>
         <li><a href="..\Accounts\Account_main.php" class="button" target="_self">Accounts</a></li>
-        <li><a href="..\Budgets\Budget_main.html" class="button" target="_self">Budget</a></li>
-        <li><a href="..\Transactions\Transactions_main.html" class="button" target="_self">Transactions</a></li>
-        <li><a href="..\Goals\Goals_main.html" class="button" target="_self">Goals</a></li>
-        <li><a href="..\Statistics\Statistics_main.html" class="button" target="_self">Statistics</a></li>
+        <li><a href="..\Budgets\Budget_main.php" class="button" target="_self">Budget</a></li>
+        <li><a href="..\Transactions\Transactions_main.php" class="button" target="_self">Transactions</a></li>
+        <li><a href="..\Goals\Goals_main.php" class="button" target="_self">Goals</a></li>
+        <li><a href="..\Statistics\Statistics_main.php" class="button" target="_self">Statistics</a></li>
       </ul>
     </div>
   </nav>
