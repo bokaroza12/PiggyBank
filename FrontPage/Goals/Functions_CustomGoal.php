@@ -1,8 +1,16 @@
 <?php
 
+
+class customgoal 
+{
+public    $custom_goal_id;
+public    $user_id;
+public    $goal_description;
+public    $target_amount;
+public    $created_at;
+}
 function createCustomGoal($userID)
 
-<?php
 // Assuming you have established a database connection
 
 function createPredefinedGoal($goalName, $goalTypeId, $createdAt) {
@@ -18,7 +26,7 @@ function createPredefinedGoal($goalName, $goalTypeId, $createdAt) {
 
     echo "Predefined Goal Created. <br>";
 }
-?>
+
 
 function getGoalItem($userID)
 function getallGoalItem($userID)

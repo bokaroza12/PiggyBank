@@ -4,10 +4,10 @@
 class Account {
     public $userID;
     public $accountID;
-    public $user_id
-    public $account_name
-    public $balance
-    public $created_at
+    public $user_id;
+    public $account_name;
+    public $balance;
+    public $created_at;
 }
 function getAccountByUserID($userID)
 

@@ -1,5 +1,7 @@
 <?php
-Class getBudgetByBudgetID
+
+
+Class budget
 {
 public $budget_id;
 public $user_id;
