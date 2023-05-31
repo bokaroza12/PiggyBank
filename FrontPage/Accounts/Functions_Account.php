@@ -25,8 +25,7 @@ function getAccountByID($accountID)
         echo 'Name: ' . $row["account_name"]. ' ';
         }  
            } 
-           else {          echo "You don't have any account , you can create one. <br>";
-
+           else {          
            }
   
 

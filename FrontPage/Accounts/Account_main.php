@@ -52,6 +52,8 @@
       echo '<button onclick="alert(\'Account Name: ' . $row["account_name"]. ' - Balance: ' . $row["balance"]. ' - Created Date : ' .$row["created_at"]. '\')">More Info</button><br>';
     }  
          } else {
+          echo "You don't have any account , you can create one. <br>";
+
          }
 
 ?>
