@@ -41,7 +41,12 @@
     <button id="button">Healthcare</button>
     <button id="button">Education</button>
     <button id="button">Transportation</button>
-    <button id="button">Travel</button>
+    <button id="button">Travel</button>  
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate">
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate">
   </div>
  </body>
 </html>
