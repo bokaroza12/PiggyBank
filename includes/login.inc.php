@@ -13,6 +13,8 @@ session_start();
 		
 		if (emptyInputLogin($username, $password) !== false) {
 		header("location: ../index.html?error=emptyinput");
+		echo '<script>alert("Empty input")</script>';
+
 		exit();
 		}
 
@@ -61,6 +63,7 @@ session_start();
 					}
 				}
 			}*/
+		echo '<script>alert("Wrong login")</script>';
 		header("location: ../index.html?error=wronglogin");
 		exit();
 			

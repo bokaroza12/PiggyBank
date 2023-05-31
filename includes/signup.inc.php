@@ -15,11 +15,13 @@ session_start();
 
 	if (emptyInputSignup($username,$email,$password,$passWordRepeat) !== false) {
 		header("location: ../index.html?error=emptyinput");
+		echo '<script>alert("Empty input")</script>';
 		exit();
 	}
 
 	if (invalidEmail($email) !== false) {
 		header("location: ../index.html?error=invalidemail");
+		echo '<script>alert("Invalid email")</script>';
 		exit();
 	}
 
@@ -31,7 +33,6 @@ session_start();
 
 	if (uidExist($con, $username,$email) !== false) {
 		header("location: ../index.html?error=usernameoremailtaken");
-		echo '';
 		echo '<script>alert("Username or email taken")</script>';
 
 		exit();
