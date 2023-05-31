@@ -12,7 +12,7 @@ session_start();
 
 		
 		if (emptyInputLogin($username, $password) !== false) {
-		header("location: ../index.php?error=emptyinput");
+		header("location: ../index.html?error=emptyinput");
 		exit();
 		}
 
@@ -61,14 +61,14 @@ session_start();
 					}
 				}
 			}*/
-		header("location: ../index.php?error=wronglogin");
+		header("location: ../index.html?error=wronglogin");
 		exit();
 			
 		}
 
 		else
 		{
-			header("location: ../index.php");
+			header("location: ../index.html");
 			exit();
 		}
 	

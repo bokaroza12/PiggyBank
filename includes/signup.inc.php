@@ -14,22 +14,26 @@ session_start();
 
 
 	if (emptyInputSignup($username,$email,$password,$passWordRepeat) !== false) {
-		header("location: ../index.php?error=emptyinput");
+		header("location: ../index.html?error=emptyinput");
 		exit();
 	}
 
 	if (invalidEmail($email) !== false) {
-		header("location: ../index.php?error=invalidemail");
+		header("location: ../index.html?error=invalidemail");
 		exit();
 	}
 
 	if (pwdMatch($password, $passWordRepeat) !== false) {
-		header("location: ../index.php?error=passwordmatch");
+		header("location: ../index.html?error=passwordmatch");
+		echo '<script>alert("Password match")</script>';
 		exit();
 	}
 
 	if (uidExist($con, $username,$email) !== false) {
-		header("location: ../index.php?error=usernameoremailtaken");
+		header("location: ../index.html?error=usernameoremailtaken");
+		echo '';
+		echo '<script>alert("Username or email taken")</script>';
+
 		exit();
 	}
 
@@ -40,13 +44,13 @@ session_start();
 			
 			mysqli_query($con,$query);
 			
-			header("location: ../index.php?error=none");
+			header("location: ../../index.html?error=none");
 			exit();
 		}
 
 		else
 		{
-			header("location: ../index.php");
+			header("location: ../index.html");
 		}
 	
 	}
