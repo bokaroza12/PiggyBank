@@ -13,7 +13,7 @@
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="../main.html" class="button" target="_self">PiggyBank</a>
+        <a href="..\user\main.html" class="button" target="_self">PiggyBank</a>
       </div>
       <ul>
       <li><a href="..\Accounts\Account_main.php" class="button" target="_self">Accounts</a></li>

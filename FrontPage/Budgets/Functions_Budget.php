@@ -24,7 +24,7 @@ function getBudgetByUserID($user_id)
     if ($resultsBudget->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget->fetch_assoc()) {
-        echo 'Budget Name: ' . $row["budget_name"]. ' ';
+        echo '<font size="+2">Budget Name: ' . $row["budget_name"]. ' Amount: ' . $row["amount"]. '</font><br> ';
         }  
            } 
            else {         

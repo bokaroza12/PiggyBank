@@ -34,7 +34,7 @@ function getCustomGoalById($customGoalId) {
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
 
-    $sql = "SELECT * FROM customgoals WHERE custom_goal_id = $customGoalId";
+    $sql = "SELECT * FROM customgoal WHERE custom_goal_id = $customGoalId";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
@@ -51,19 +51,20 @@ function getCustomGoalByUserId($userId) {
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
 
-    $sql = "SELECT * FROM customgoals WHERE user_id = $userId";
+    $sql = "SELECT * FROM customgoal WHERE user_id = $userId";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
         $customGoals = array();
         while ($row = $result->fetch_assoc()) {
             $customGoals[] = $row;
+            echo '<font size="+2"> Custom Goal Name: ' . $row["goal_description"] . ' Custom Goal Amount: ' . $row["target_amount"] . '</font><br>';
         }
-        echo 'Custom Goal Name: ' . $row["goal_description"]. ' Custom Goal Amount: ' . $row["target_amount"].  '';
     } else {
-        return array(); // No custom goals found for the user
+        echo "No custom goals found for the user" ; 
     }
 }
+
 
 function updateCustomGoal($customGoalId, $userId, $goalDescription, $targetAmount, $createdAt) {
     global $con;
@@ -71,7 +72,7 @@ function updateCustomGoal($customGoalId, $userId, $goalDescription, $targetAmoun
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
 
-    $sql = "UPDATE customgoals SET user_id = $userId, goal_description = '$goalDescription', target_amount = $targetAmount, created_at = '$createdAt' WHERE custom_goal_id = $customGoalId";
+    $sql = "UPDATE customgoal SET user_id = $userId, goal_description = '$goalDescription', target_amount = $targetAmount, created_at = '$createdAt' WHERE custom_goal_id = $customGoalId";
     $result = $con->query($sql);
 
     if ($result === TRUE) {

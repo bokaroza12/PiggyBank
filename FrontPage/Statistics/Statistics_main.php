@@ -13,7 +13,7 @@
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="..\main.html" class="button" target="_self">PiggyBank</a>
+        <a href="..\user\main.html" class="button" target="_self">PiggyBank</a>
       </div>
       <ul>
         <li><a href="..\Accounts\Account_main.php" class="button" target="_self">Accounts</a></li>
@@ -27,9 +27,27 @@
   <div class="img"></div>
   <div class="center">
    <ul>
-  <li><font size="+10">Coffee</font></li>
-  <li><font size="+10">Milk</font></li>
-  <li><font size="+10">Tea</font></li>
+
+   <?php 
+
+
+require_once("../../includes/login.inc.php");
+require_once("../../FrontPage/Accounts/Functions_Account.php");
+require_once("../../FrontPage/Transactions/Function_Income.php");
+require_once("../../FrontPage/Transactions/Function_Expense.php");
+require_once("../../FrontPage/Budgets/Functions_Budget.php");
+
+
+$userID = 0;
+$userID = getAccountByUserID($userID);
+
+
+    getExpenseById($userID);
+    getIncomeById($userID);
+    getBudgetByUserID($userID);
+
+
+    ?>
 </ul>
     <div class="btns">
     </div>

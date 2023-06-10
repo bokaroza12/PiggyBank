@@ -71,9 +71,9 @@ function getAllCategories($button) {
         while ($row = $result->fetch_assoc()) {
             if ($button == 1) {
                 $table[] = $row["category_name"];
-                echo $row["category_name"] . '<br>';
-            } else {
-                echo 'Category Name: ' . $row["category_name"] . '<br>';
+                echo '<font size="+1">Category Name: ' . $row["category_name"] . '</font>';           
+             } else {
+                echo '<font size="+2">Category Name: ' . $row["category_name"] . '</font>';
                 $table[] = $row["category_name"];
             }
         }

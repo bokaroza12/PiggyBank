@@ -41,7 +41,7 @@ function getExpenseById($expense_id) {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo 'Expense Amount: ' . $row["expense_amount"]. ' Expense Date: ' . $row["expense_date"].  '';
+            echo '<font size="+2">Expense Amount: ' . $row["expense_amount"]. ' Expense Date: ' . $row["expense_date"].  '</font><br>';
         }
     } else {
         echo "No expense found.";
@@ -59,7 +59,7 @@ function getExpenseByUserId($user_id) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo 'Expense Amount: ' . $row["expense_amount"]. ' Expense Date: ' . $row["expense_date"].  '';
+            echo 'Expense Amount: ' . $row["expense_amount"]. ' Expense Date: ' . $row["expense_date"].  '<br>';
         }
     } else {
         echo "No expenses found for the user.";

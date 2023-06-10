@@ -13,7 +13,7 @@
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="..\main.html" class="button" target="_self">PiggyBank</a>
+        <a href="..\user\main.html" class="button" target="_self">PiggyBank</a>
       </div>
       <ul>
         <li><a href="..\Accounts\Account_main.php" class="button" target="_self">Accounts</a></li>
@@ -26,11 +26,7 @@
   </nav>
     <div class="img"></div>
   <div class="center" id="expense_cat">
-    <!-- <ul>
-      <li><font size="+10">Coffee</font></li>
-      <li><font size="+10">Milk</font></li>
-      <li><font size="+10">Tea</font></li>
-    </ul> -->
+
 
     <?php
   require_once("../../includes/login.inc.php");
@@ -49,23 +45,7 @@
 
 
 ?>
-<!--
-    <button id="button">Food</button>
-    <button id="button">Entertainment</button>
-    <button id="button">Housing</button>
-    <button id="button">Shopping</button>
-    <button id="button">Healthcare</button>
-    <button id="button">Education</button>
-    <button id="button">Transportation</button>
-    <button id="button">Travel</button>  
-    <button id="button">Utilities</button>  
-    <button id="button">Miscellaneous</button>  
 
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" name="startDate">
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" name="endDate">
-        -->
   </div>
  </body>
 </html>

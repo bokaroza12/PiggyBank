@@ -61,7 +61,7 @@ public    $transaction_date;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-            echo 'Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '';
+            echo '<font size="+2">Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '</font><br>';
             }
         } else {
             echo "No transactions found for this user.";
