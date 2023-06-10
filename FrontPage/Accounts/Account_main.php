@@ -32,10 +32,12 @@
  <?php
   require_once("../../includes/login.inc.php");
   require_once("Functions_Account.php");
+  require_once("../../FrontPage/user/Functions_user.php");
+
 
 
   $userID = 0;
-  $userID = getAccountByUserID($userID);
+  $userID = getUserById($userID);
 
   $accountID = 0;
   $accountID = getAccountByID($accountID);

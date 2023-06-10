@@ -10,11 +10,25 @@ class Account {
     public $created_at;
 }
 function getAccountByUserID($userID)
-
 {
-    $userID = $_SESSION['id'];
-    return $userID;
+    global $con;
+    
+    require_once("../../includes/login.inc.php");
+    require_once("../../includes/connection.php");
+    $sql = "SELECT * FROM account WHERE user_id = '{$userID}'";
+    $resultsAcc = $con->query($sql);
+
+    if ($resultsAcc->num_rows > 0) {
+        // output data of each row
+        while ($row = $resultsAcc->fetch_assoc()) {
+            echo 'Name: ' . $row["account_name"] . '';
+            echo '<button>Select</button><br>';
+        }
+    } else {
+        echo 'There are no accounts.';
+    }
 }
+
 
 function getAccountByID($accountID)
 
@@ -31,7 +45,7 @@ function getAccountByID($accountID)
     if ($resultsAcc->num_rows > 0) {
         // output data of each row
         while($row = $resultsAcc->fetch_assoc()) {
-        echo 'Name: ' . $row["account_name"]. ' ';
+        echo 'Name: ' . $row["account_name"]. '<br>';
         }  
            } 
            else {          

@@ -32,14 +32,14 @@
 
 
 require_once("../../includes/login.inc.php");
-require_once("../../FrontPage/Accounts/Functions_Account.php");
+require_once("../../FrontPage/user/Functions_user.php");
 require_once("../../FrontPage/Transactions/Function_Income.php");
 require_once("../../FrontPage/Transactions/Function_Expense.php");
 require_once("../../FrontPage/Budgets/Functions_Budget.php");
 
 
 $userID = 0;
-$userID = getAccountByUserID($userID);
+$userID = getUserById($userID);
 
 
     getExpenseById($userID);

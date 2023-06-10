@@ -33,19 +33,9 @@ function createUser($user_id, $username, $email, $password, $created_at) {
 function getUserById($user_id) {
     global $con;
 
-    require_once("../../includes/login.inc.php");
-    require_once("../../includes/connection.php");
+    $userID = $_SESSION['id'];
+    return $userID;
 
-    $sql = "SELECT * FROM user WHERE user_id = $user_id";
-    $result = $con->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-        echo 'UserId : ' . $row["user_id"]. ' Username : ' . $row["username"].  ' Email : ' . $row["email"].  '';
-        }
-    } else {
-        echo "No user found.";
-    }
 }
 
 function getUserByUsername($username) {

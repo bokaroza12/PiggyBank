@@ -31,14 +31,18 @@
 
 
 require_once("../../includes/login.inc.php");
-require_once("../../FrontPage/Accounts/Functions_Account.php");
+require_once("../../FrontPage/user/Functions_user.php");
 require_once("Function_Transactions.php");
+require_once("../../FrontPage/Accounts/Functions_Account.php");
 
 $userID = 0;
-$userID = getAccountByUserID($userID);
+$userID = getUserById($userID);
 
 
-    getTransactionsByUserId($userID)
+
+
+    getAccountByUserID($userID);
+
     ?>
 </ul>
     <div class="btns">
