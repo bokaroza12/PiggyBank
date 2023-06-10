@@ -42,9 +42,8 @@ public    $transaction_date;
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                // Process the data
+            echo 'Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '';
             }
         } else {
             echo "No transaction found.";
@@ -61,9 +60,8 @@ public    $transaction_date;
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                // Process the data
+            echo 'Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '';
             }
         } else {
             echo "No transactions found for this user.";

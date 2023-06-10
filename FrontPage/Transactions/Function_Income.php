@@ -41,7 +41,7 @@ function getIncomeById($income_id) {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+            echo 'Income Source: ' . $row["income_source"]. ' Income Amount: ' . $row["income_amount"].  '';
         }
     } else {
         echo "No income found.";
@@ -60,8 +60,8 @@ function getIncomeByUserId($user_id) {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
-        }
+            echo 'Income Source: ' . $row["income_source"]. ' Income Amount: ' . $row["income_amount"].  '';
+         }
     } else {
         echo "No incomes found for the user.";
     }

@@ -38,7 +38,7 @@ function getGoalItemById($goalItemId) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            // Process and display the goal item data
+            echo 'Goal Name: ' . $row["goal_description"]. ' Goal Amount: ' . $row["target_amount"].  '';
         }
     } else {
         echo "No goal item found.";
@@ -56,8 +56,8 @@ function getAllGoalItemByPredefinedId($predefinedGoalId) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            // Process and display the goal item data
-        }
+            echo 'Goal Name: ' . $row["goal_description"]. ' Goal Amount: ' . $row["target_amount"].  '';
+}
     } else {
         echo "No goal items found for the predefined goal.";
     }

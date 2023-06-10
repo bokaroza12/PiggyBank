@@ -34,6 +34,24 @@
     <h3 style="color:rgb(34, 34, 102)">Expected Expenses : <input type="number"></h3>
     <h1 style="color:rgb(34, 34, 102)">Expense Categories</h1>
     </br>
+    <?php
+  require_once("../../includes/login.inc.php");
+  require_once("../../FrontPage/Accounts/Functions_Account.php");
+  require_once("../../FrontPage/Transactions/Function_Category.php");
+
+  $userID = 0;
+  $userID = getAccountByUserID($userID);
+
+  $accountID = 0;
+  $accountID = getAccountByID($accountID);
+
+ 
+  getAllCategories(1);
+
+         
+
+?>
+<!--
     <button id="button">Food</button>
     <button id="button">Entertainment</button>
     <button id="button">Housing</button>
@@ -42,11 +60,14 @@
     <button id="button">Education</button>
     <button id="button">Transportation</button>
     <button id="button">Travel</button>  
+    <button id="button">Utilities</button>  
+    <button id="button">Miscellaneous</button>  
 
     <label for="startDate">Start Date:</label>
     <input type="date" id="startDate" name="startDate">
     <label for="endDate">End Date:</label>
     <input type="date" id="endDate" name="endDate">
+        -->
   </div>
  </body>
 </html>

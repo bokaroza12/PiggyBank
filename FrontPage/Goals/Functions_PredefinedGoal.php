@@ -39,8 +39,8 @@ class CustomGoals {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Process and display the predefined goal data
-            }
+                echo 'Predefined Goals Name: ' . $row["goal_name"] '';
+    }
         } else {
             echo "No predefined goal found.";
         }
@@ -57,7 +57,7 @@ class CustomGoals {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Process and display the predefined goal data
+                echo 'Predefined Goals Name: ' . $row["goal_name"] '';
             }
         } else {
             echo "No predefined goals found.";

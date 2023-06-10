@@ -22,6 +22,7 @@ function getBudgetPeriodByID($budget_period_id)
     if ($resultsBudget->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget->fetch_assoc()) {
+            echo 'Budget start Period: ' . $row["budget_name"]. ' Budget end Period: ' . $row["budget_name"].  '';
         }  
            } 
            else {         
@@ -47,6 +48,7 @@ function getBudgetPeriodsByBudgetID($budget_id)
     if ($resultsBudget1->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget1->fetch_assoc()) {
+            echo 'Budget start Period: ' . $row["budget_name"]. ' Budget end Period: ' . $row["budget_name"].  '';
         }  
            } 
            else {         

@@ -39,7 +39,7 @@ function getCustomGoalById($customGoalId) {
 
     if ($result->num_rows > 0) {
         $customGoal = $result->fetch_assoc();
-        return $customGoal;
+        echo 'Custom Goal Name: ' . $row["goal_description"]. ' Custom Goal Amount: ' . $row["target_amount"].  '';
     } else {
         return null; // Custom goal not found
     }
@@ -59,7 +59,7 @@ function getCustomGoalByUserId($userId) {
         while ($row = $result->fetch_assoc()) {
             $customGoals[] = $row;
         }
-        return $customGoals;
+        echo 'Custom Goal Name: ' . $row["goal_description"]. ' Custom Goal Amount: ' . $row["target_amount"].  '';
     } else {
         return array(); // No custom goals found for the user
     }
