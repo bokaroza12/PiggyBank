@@ -15,14 +15,19 @@ function getAccountByUserID($userID)
     
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
+    require_once("../../FrontPage/Transactions/Function_Transactions.php");
+    
+
     $sql = "SELECT * FROM account WHERE user_id = '{$userID}'";
     $resultsAcc = $con->query($sql);
+    $checker  = 0 ;
 
     if ($resultsAcc->num_rows > 0) {
         // output data of each row
         while ($row = $resultsAcc->fetch_assoc()) {
             echo 'Name: ' . $row["account_name"] . '';
-            echo '<button>Select</button><br>';
+            echo'<a href="..\Transactions\Transaction_main2.php" class="button" target="_self">  Select Account</a><br>'
+            ;
         }
     } else {
         echo 'There are no accounts.';

@@ -56,12 +56,14 @@ public    $transaction_date;
         require_once("../../includes/login.inc.php");
         require_once("../../includes/connection.php");
 
-        $sql = "SELECT * FROM transaction WHERE user_id = $user_id";
+        $sql = "SELECT * FROM transaction WHERE user_id = $user_id order by transaction_date desc ";
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
             echo '<font size="+2">Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '</font><br>';
+            echo '<font size="+2">Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '</font><br>';
+
             }
         } else {
             echo "No transactions found for this user.";
