@@ -38,7 +38,7 @@ function getAccountBalanceById($accountBalanceId) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            // Process and display the account balance data
+            echo 'Balance amount: ' . $row["balance_amount"]. ' ';
         }
     } else {
         echo "No account balance found.";
@@ -56,7 +56,8 @@ function getAccountBalanceByAccountId($accountId) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            // Process and display the account balance data
+            echo 'Balance amount: ' . $row["balance_amount"]. ' ';
+
         }
     } else {
         echo "No account balance found for the account ID.";

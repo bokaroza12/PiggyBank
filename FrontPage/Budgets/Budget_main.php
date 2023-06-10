@@ -31,9 +31,7 @@
       <li><font size="+10">Milk</font></li>
       <li><font size="+10">Tea</font></li>
     </ul> -->
-    <h3 style="color:rgb(34, 34, 102)">Expected Expenses : <input type="number"></h3>
-    <h1 style="color:rgb(34, 34, 102)">Expense Categories</h1>
-    </br>
+
     <?php
   require_once("../../includes/login.inc.php");
   require_once("../../FrontPage/Accounts/Functions_Account.php");
@@ -45,10 +43,10 @@
   $accountID = 0;
   $accountID = getAccountByID($accountID);
 
- 
-  getAllCategories(1);
+  $categoryname = 0 ;
+  $categoryname = getAllCategories(1);
 
-         
+
 
 ?>
 <!--
