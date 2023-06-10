@@ -40,9 +40,8 @@ function getUserById($user_id) {
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+        echo 'UserId : ' . $row["user_id"]. ' Username : ' . $row["username"].  ' Email : ' . $row["email"].  '';
         }
     } else {
         echo "No user found.";
@@ -59,9 +58,8 @@ function getUserByUsername($username) {
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+         echo 'UserId : ' . $row["user_id"]. ' Username : ' . $row["username"].  ' Email : ' . $row["email"].  '';
         }
     } else {
         echo "No user found with this username.";

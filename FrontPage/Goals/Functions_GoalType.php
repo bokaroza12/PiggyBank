@@ -37,7 +37,7 @@ public    $type_name;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Process and display the goal type data
+                echo 'Goal Type Name: ' . $row["type_name"] '';
             }
         } else {
             echo "No goal type found.";
@@ -55,7 +55,7 @@ public    $type_name;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Process and display the goal type data
+                echo 'Goal Type Name: ' . $row["type_name"] '';
             }
         } else {
             echo "No goal types found.";

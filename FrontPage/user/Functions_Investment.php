@@ -39,9 +39,8 @@ function getInvestmentById($investment_id) {
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+            echo 'Investment Name : ' . $row["investment_name"]. ' Investment Amount: ' . $row["investment_amount"].  ' Investment Date: ' . $row["created_at"].  '';
         }
     } else {
         echo "No investment found.";
@@ -58,9 +57,8 @@ function getInvestmentByUserId($user_id) {
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
-        // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+            echo 'Investment Name : ' . $row["investment_name"]. ' Investment Amount: ' . $row["investment_amount"].  ' Investment Date: ' . $row["created_at"].  '';
         }
     } else {
         echo "No investments found for the user.";

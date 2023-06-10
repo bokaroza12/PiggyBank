@@ -41,9 +41,9 @@ function getSavingsById($savings_id) {
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                // Process the data
+         echo 'Savings Name : ' . $row["savings_name"]. ' Savings Amount: ' . $row["savings_amount"].  ' Savings Date: ' . $row["savings_date"].  '';
+
             }
         } else {
             echo "No savings found.";
@@ -60,9 +60,8 @@ function getSavingsByUserId($user_id) {
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                // Process the data
+            echo 'Savings Name : ' . $row["savings_name"]. ' Savings Amount: ' . $row["savings_amount"].  ' Savings Date: ' . $row["savings_date"].  '';
             }
         } else {
             echo "No savings found for this user.";

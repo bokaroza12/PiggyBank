@@ -40,14 +40,14 @@ function getCategoryById($category_id) {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+            echo 'Category Name: ' . $row["category_name"] '';
         }
     } else {
         echo "No category found.";
     }
 }
 
-function getAllCategories() {
+function getAllCategories($button) {
     global $con;
 
     require_once("../../includes/login.inc.php");
@@ -59,7 +59,10 @@ function getAllCategories() {
     if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
-            // Process the data
+            if ($button == 1){
+      echo '<button>'. $row["category_name"].'</button>';
+            }
+            echo 'Category Name: ' . $row["category_name"] '';
         }
     } else {
         echo "No categories found.";
