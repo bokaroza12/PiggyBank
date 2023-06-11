@@ -33,21 +33,50 @@
   require_once("../../FrontPage/Accounts/Functions_Account.php");
   require_once("../../FrontPage/Transactions/Function_Category.php");
   require_once("../../FrontPage/user/Functions_user.php");
+  require_once("Functions_Budget.php");
+
 
   
   $userID = 0;
   $userID = getUserById($userID);
 
+  getBudgetByUserID($userID);
 
 
 
-  $categoryname = 0 ;
-  $categoryname = getAllCategories(1);
+  if (isset($_GET['submit'])) {
+    $amount = $_GET['amount'];
+    $date = $_GET['date'];
+    $budget_id = $_GET['budget_id'];
+
+    editBudget($budget_id, $amount, date('Y-m-d'), $date);
+}
+
+
+
+  echo '<html>
+  <head>
+  <title>Form for Edit</title>
+  </head>
+  <body>
+  <form method="GET">
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" id="amount" required><br>
+
+  <label for="date">Date:</label>
+  <input type="date" name="date" id="date" required><br>
+
+  <label for="budget_id">Budget ID:</label>
+  <input type="number" name="budget_id" id="budget_id" required><br>
+
+  <input type="submit" name="submit" value="Submit">
+  </form>  
+  </body>
+  </html>'
+
+
+
   
-  echo '
-  <a href="Budget_main_edit.php" class="button">Press for Edit</a>';
-
-
 
 
 ?>

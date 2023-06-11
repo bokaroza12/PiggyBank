@@ -24,7 +24,7 @@ function getBudgetByUserID($user_id)
     if ($resultsBudget->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget->fetch_assoc()) {
-        echo '<font size="+2">Budget Name: ' . $row["budget_name"]. ' Amount: ' . $row["amount"]. '</font><br> ';
+        echo '<font size="+2">Budget Name: ' . $row["budget_name"]. ' -  Amount: ' . $row["amount"]. ' -  Budget ID: ' . $row["budget_id"]. '</font><br> ';
         }  
            } 
            else {         
@@ -51,7 +51,7 @@ function getBudgetByBudgetID($budget_id)
     if ($resultsBudget1->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget1->fetch_assoc()) {
-        echo 'Budget Name: ' . $row["budget_name"]. ' ';
+        echo 'Budget Name: ' . $row["budget_name"]. ' Budget ID: ' . $row["budget_id"]. ' ';
         }  
            } 
            else {         
@@ -83,20 +83,54 @@ function createBudget($user_id,$budget_name,$amount,$start_date,$end_date)
 
 
 
-function editBudget($budget_id,$budget_name,$amount,$start_date,$end_date)
+function editBudget($budget_id,$amount,$start_date,$end_date)
 
 {
     global $con;
+
+    require_once("../../FrontPage/user/Functions_user.php");
+
+
+    
+    $userID = 0;
+    $userID = getUserById($userID);
+    $check=0;
+  
     
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
-    $sql = "UPDATE budget
-    SET budget_name = $budget_name, amount = $amount, start_date = $start_date, end_date = $end_date
+    
+    $sqlcheck = "SELECT budget_id FROM budget where user_id = '{$userID}'";
+    $resultscheck2 = $con->query($sqlcheck);
+    
+
+    if ($resultscheck2->num_rows > 0) {
+        // output data of each row
+        while($row = $resultscheck2->fetch_assoc()) {
+                if($budget_id===$row['budget_id']) {
+                    
+    $sql5 = "UPDATE budget
+    SET amount = $amount, 
+    start_date = $start_date, 
+    end_date = $end_date
     WHERE budget_id = $budget_id;";
-    $resultsBudget3 = $con->query($sql);
+    $resultsBudget3 = $con->query($sql5);
+
+    echo '<script>alert("Budget edited");</script>';
+                    $check = 1;
+
+                }       
+            }  
+           } 
+
+           if ($check != 1)
+           {
+            echo '<script>alert("Wrong ID! Type your ID please!");</script>';
+           }
+  
 
 
-    echo "Budget Edited. <br>";
+
 
 }
 

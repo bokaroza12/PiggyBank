@@ -51,7 +51,7 @@ function getAllCategories($button) {
     global $con;
     $table = [];
     $userID = 0;
-    $userID = getAccountByUserID($userID); // Make sure to pass the correct user ID value
+    $userID = getUserById($userID); 
 
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
@@ -67,7 +67,6 @@ function getAllCategories($button) {
     $nextBudgetId = $maxBudgetId + 1;
 
     if ($result->num_rows > 0) {
-        // Output data of each row
         while ($row = $result->fetch_assoc()) {
             if ($button == 1) {
                 $table[] = $row["category_name"];
@@ -82,7 +81,6 @@ function getAllCategories($button) {
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        // Get the form data
         if (isset($_GET["category"]) && isset($_GET["amount"]) && isset($_GET["name"])) {
             $selectedCategory = $_GET["category"];
             $expenseAmount = $_GET["amount"];
