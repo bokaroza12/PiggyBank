@@ -61,9 +61,23 @@ public    $transaction_date;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-            echo '<font size="+2">Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '</font><br>';
-            echo '<font size="+2">Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '</font><br>';
+            echo 'Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '';
+          
+              $sql2 = "SELECT * FROM transaction 
+              INNER JOIN user ON transaction.user_id = user.user_id 
+              INNER JOIN budget ON transaction.budget_id = budget.budget_id 
+              INNER JOIN category ON transaction.category_id = category.category_id 
+              WHERE user.user_id = '{$user_id}'
+              AND transaction_id = {$row["transaction_id"]}";
 
+              $results = $con->query($sql2);
+          
+          
+              if ($results->num_rows > 0) {
+                // output data of each row
+                while($row2 = $results->fetch_assoc()) {
+                    echo '<a style="color: red;" onclick="alert(\'Category Name : ' . $row2["category_name"]. ' - Transaction amount: ' . $row2["amount"]. ' - Budget Name: ' . $row2["budget_name"].'\')"> Click for More Info</a><br>';              }  
+                   } 
             }
         } else {
             echo "No transactions found for this user.";
