@@ -116,8 +116,13 @@ function editBudget($budget_id,$amount,$start_date,$end_date)
     WHERE budget_id = $budget_id;";
     $resultsBudget3 = $con->query($sql5);
 
-    echo '<script>alert("Budget edited");</script>';
+  
                     $check = 1;
+                    echo '<script>';
+                    echo 'alert("Budget edited");';
+                    echo 'window.location.href = "'.$_SERVER['PHP_SELF'].'";';
+                    echo '</script>';
+        
 
                 }       
             }  

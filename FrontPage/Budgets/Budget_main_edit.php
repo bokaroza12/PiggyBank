@@ -48,8 +48,7 @@
     $amount = $_GET['amount'];
     $date = $_GET['date'];
     $budget_id = $_GET['budget_id'];
-
-    editBudget($budget_id, $amount, date('Y-m-d'), $date);
+    editBudget($budget_id, $amount, date("Y-m-d"), $date);
 }
 
 
