@@ -51,7 +51,7 @@ function getBudgetByBudgetID($budget_id)
     if ($resultsBudget1->num_rows > 0) {
         // output data of each row
         while($row = $resultsBudget1->fetch_assoc()) {
-        echo 'Budget Name: ' . $row["budget_name"]. ' Budget ID: ' . $row["budget_id"]. ' ';
+        echo 'Last Budget Name: ' . $row["budget_name"]. ' Budget ID: ' . $row["budget_id"]. ' Amount : ' . $row["amount"]. ' ';
         }  
            } 
            else {         
@@ -65,19 +65,19 @@ function getBudgetByBudgetID($budget_id)
 }
 
 
-function createBudget($user_id,$budget_name,$amount,$start_date,$end_date)
+function createBudget($budget_id,$user_id,$budget_name,$amount,$start_date,$end_date)
 
 {
     global $con;
-    
+    if($budget_name = 0)
+    {
+        $budget_name = 'New Budget from Transaction';
+    }
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
-    $sql = "INSERT INTO budget (user_id, budget_name, amount, start_date, end_date)
-    VALUES ($user_id,$budget_name,$amount,$start_date,$end_date);";
+    $sql = "INSERT INTO budget (budget_id,user_id, budget_name, amount, start_date, end_date)
+    VALUES ($budget_id,$user_id,$budget_name,$amount,$start_date,$end_date);";
     $resultsBudget2 = $con->query($sql);
-
-
-    echo "Budget Created. <br>";
 
 }
 
