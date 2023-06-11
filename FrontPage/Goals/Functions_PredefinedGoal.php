@@ -7,9 +7,6 @@ public    $goal_type_id;
 public    $created_at;
 }
 
-class CustomGoals {
-    // ...
-
     function createPredefinedGoal($predefinedGoalId, $goalName, $goalTypeId, $createdAt) {
         global $con;
 
@@ -22,7 +19,7 @@ class CustomGoals {
         $result = $con->query($sql);
 
         if ($result === TRUE) {
-            echo "Predefined Goal Created. <br>";
+            echo '<script>alert("Predefined Goal Created.");</script>';        
         } else {
             echo "Error creating predefined goal";
         }
@@ -39,8 +36,8 @@ class CustomGoals {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo 'Predefined Goals Name: ' . $row["goal_name"] '';
-    }
+                echo 'Predefined Goals Name: ' . $row["goal_name"] . '<br> ';
+            }
         } else {
             echo "No predefined goal found.";
         }
@@ -52,12 +49,12 @@ class CustomGoals {
         require_once("../../includes/login.inc.php");
         require_once("../../includes/connection.php");
 
-        $sql = "SELECT * FROM PredefinedGoal";
+        $sql = "SELECT distinct * FROM PredefinedGoal";
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo 'Predefined Goals Name: ' . $row["goal_name"] '';
+                echo 'Predefined Goals Name: ' . $row["goal_name"]. '<br>';
             }
         } else {
             echo "No predefined goals found.";
@@ -98,8 +95,7 @@ class CustomGoals {
         }
     }
 
-    // ...
-}
+
 
 
 ?>

@@ -21,7 +21,7 @@ function createGoalItem($goalItemId, $predefinedGoalId, $goalDescription, $targe
     $result = $con->query($sql);
 
     if ($result === TRUE) {
-        echo "Goal Item Created. <br>";
+        echo '<script>alert("Goal Item.");</script>';    
     } else {
         echo "Error creating goal item";
     }
@@ -38,7 +38,7 @@ function getGoalItemById($goalItemId) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo 'Goal Name: ' . $row["goal_description"]. ' Goal Amount: ' . $row["target_amount"].  '';
+            echo 'Goal Name: ' . $row["goal_description"]. ' - Goal Amount: ' . $row["target_amount"].  '<br>';
         }
     } else {
         echo "No goal item found.";

@@ -33,13 +33,16 @@
 
 require_once("../../includes/login.inc.php");
 require_once("../../FrontPage/user/Functions_user.php");
-require_once("Functions_CustomGoal.php");
+require_once("Functions_PredefinedGoal.php");
 
 $userID = 0;
 $userID = getUserById($userID);
 
 
-    getCustomGoalByUserId($userID);
+getAllPredefinedGoals();
+
+echo'<br><span><a href="Goals_Add.php" class="button">Add Goal</a></span><br>'
+
 
 
     ?>

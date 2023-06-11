@@ -20,8 +20,8 @@ public    $type_name;
         $result = $con->query($sql);
 
         if ($result === TRUE) {
-            echo "Goal Type Created. <br>";
-        } else {
+            echo '<script>alert("Goal Created.");</script>';
+                } else {
             echo "Error creating goal type";
         }
     }
@@ -37,7 +37,7 @@ public    $type_name;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo 'Goal Type Name: ' . $row["type_name"] '';
+                echo 'Goal Type Name: ' . $row["type_name"] . '';           
             }
         } else {
             echo "No goal type found.";
@@ -55,8 +55,8 @@ public    $type_name;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo 'Goal Type Name: ' . $row["type_name"] '';
-            }
+                echo 'Goal Type Name: ' . $row["type_name"] . '';           
+             }
         } else {
             echo "No goal types found.";
         }
