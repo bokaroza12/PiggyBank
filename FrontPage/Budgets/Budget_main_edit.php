@@ -40,6 +40,8 @@
   $userID = 0;
   $userID = getUserById($userID);
 
+  echo '<h2 style="font-size: larger; font-weight: bold;">Form for Edit Budget</h2>';
+
   getBudgetByUserID($userID);
 
 
@@ -55,7 +57,6 @@
 
   echo '<html>
   <head>
-  <title>Form for Edit</title>
   </head>
   <body>
   <form method="GET">

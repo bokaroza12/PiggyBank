@@ -34,14 +34,67 @@ require_once("../../includes/login.inc.php");
 require_once("../../FrontPage/user/Functions_user.php");
 require_once("Function_Transactions.php");
 require_once("../../FrontPage/Accounts/Functions_Account.php");
+require_once("../../FrontPage/Budgets/Functions_Budget.php");
+require_once("Function_Category.php");
+
 
 $userID = 0;
 $userID = getUserById($userID);
 
 
+echo '<h2 style="font-size: larger; font-weight: bold;">Form for New Transaction</h2>';
+getCategoryById(0);
+
+global $con;
+$sql_max_id = "SELECT MAX(transaction_id) AS max_id FROM transaction";
+$result_max_id = $con->query($sql_max_id);
+$row_max_id = $result_max_id->fetch_assoc();
+$max_id = $row_max_id['max_id'];
+
+$transaction_id = $max_id + 1;
+
+$sql_max_id_2 = "SELECT MAX(budget_id) AS max_id FROM budget";
+$result_max_id_2 = $con->query($sql_max_id_2);
+$row_max_id_2 = $result_max_id_2->fetch_assoc();
+$max_id_2 = $row_max_id_2['max_id'];
+
+$budget_id = $max_id_2 + 1;
+$done = 0;
 
 
-getTransactionsByUserId($userID);
+if (isset($_GET['submit'])) {
+    $amount = $_GET['amount'];
+    $date = $_GET['date'];
+    $budget = 0;
+    $category_id = $_GET['category_id'];
+    $done = 1 ;
+    createBudget($budget_id,$userID,$budget,$amount,date("Y-m-d"),$date);
+    createTransaction($transaction_id, $userID, $budget_id, $category_id, $amount, $date);
+}
+if ($done != 0){
+getTransactionById($transaction_id);
+}
+
+
+
+  echo '<html>
+  <head>
+  </head>
+  <body>
+  <form method="GET">
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" id="amount" required><br>
+
+  <label for="date">Date:</label>
+  <input type="date" name="date" id="date" required><br>
+
+  <label for="category_id">Category ID:</label>
+  <input type="number" name="category_id" id="category_id" required><br>
+
+  <input type="submit" name="submit" value="Submit">
+  </form>  
+  </body>
+  </html>';
 
 
 

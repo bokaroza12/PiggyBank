@@ -33,19 +33,34 @@ function getCategoryById($category_id) {
 
     require_once("../../includes/login.inc.php");
     require_once("../../includes/connection.php");
+    if ($category_id == 0){
+        $sql = "SELECT * FROM category";
+        $result = $con->query($sql);
 
-    $sql = "SELECT * FROM category WHERE category_id = $category_id";
-    $result = $con->query($sql);
-
-    if ($result->num_rows > 0) {
-        // Output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo 'Category Name: ' . $row["category_name"]. '';
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<span style="font-size: larger;">Category Name: ' . $row["category_name"].' - Category ID: ' . $row["category_id"].  '</span><br>';
+            }
+        } else {
+            echo "No category found.";
         }
     } else {
-        echo "No category found.";
+        $sql = "SELECT * FROM category WHERE category_id = $category_id";
+        $result = $con->query($sql);
+    
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<span style="font-size: larger;">Category Name: ' . $row["category_name"]. '</span><br>';
+            }
+        } else {
+            echo "No category found.";
+        }
     }
 }
+
+
+
+
 
 function getAllCategories($button) {
     global $con;

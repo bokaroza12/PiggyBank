@@ -44,6 +44,10 @@ $userID = getUserById($userID);
     getAccountByUserID($userID);
 
 
+    echo'<a href="Transaction_add.php" class="button">Add Transaction</a><br>'
+
+
+
 
 
     ?>

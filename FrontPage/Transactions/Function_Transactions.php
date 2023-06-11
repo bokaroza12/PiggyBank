@@ -26,8 +26,10 @@ public    $transaction_date;
         $result = $con->query($sql);
 
         if ($result === TRUE) {
-            echo "Transaction created successfully. <br>";
-        } else {
+            echo '<script>';
+            echo 'alert("Transaction created");';
+            echo '</script>';
+                } else {
             echo "Error creating transaction" ;
         }
     }
@@ -43,7 +45,7 @@ public    $transaction_date;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-            echo 'Transaction amount: ' . $row["amount"]. ' Transaction date: ' . $row["transaction_date"].  '';
+                echo '<br><br><b>Last Transaction amount:</b> ' . $row["amount"] . '<br><b>Transaction date:</b> ' . $row["transaction_date"] . '<br><br>';
             }
         } else {
             echo "No transaction found.";
